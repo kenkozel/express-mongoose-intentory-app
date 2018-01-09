@@ -1,0 +1,56 @@
+<% include ../partials/header %>
+<div class="container">
+	<h1><i class="fa fa-truck" aria-hidden="true"></i> Shipment Report</h1>
+                        <table id="datatable" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                        <tr>
+                                        <th class="col-xs-3">Market:</th>
+                                        <th class="col-xs-3">LNC Number:</th>
+                                        <th class="col-xs-3">Load Date:</th>
+                                        <th class="col-xs-3">Ship Name:</th>
+                                        <th class="col-xs-3">Total Cattle:</th>
+                                        </tr>
+                                </thead>
+                                        <tbody>
+                                                 <% shipment.forEach(function(shipment){ %>
+                                                <tr>
+                                                <td class="col-xs-6"><%= shipment.market %></td>
+                                                <td class="col-xs-3"><%= shipment.shippingnumber %></td>
+                                                <td class="col-xs-3"><%= shipment.loaddate %></td>
+                                                <td class="col-xs-3"><%= shipment.shipname %></td>
+                                                <td class="col-xs-3"><%= shipment.cowsalive %></td>
+                                                <% }); %>
+                                                </tr>
+                                </tbody>
+                        </table>
+			<div><h1><i class="fa fa-ship" aria-hidden="true"></i> Update Report</h1></div>
+				<table id="datatable" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                        <tr>
+                                        <th class="col-xs-3">Market:</th>
+                                        <th class="col-xs-3">LNC Number:</th>
+                                        <th class="col-xs-3">Load Date:</th>
+                                        <th class="col-xs-3">Ship Name:</th>
+                                        <th class="col-xs-3">Total Cattle:</th>
+                                        </tr>
+                                </thead>
+                                        <tbody>
+                                                 <% shipment.forEach(function(shipment){ %>
+                                                <tr>
+                                                <td class="col-xs-6"><%= shipment.market %></td>
+                                                <td class="col-xs-3"><%= shipment.shippingnumber %></td>
+                                                <td class="col-xs-3"><%= shipment.loaddate %></td>
+                                                <td class="col-xs-3"><%= shipment.shipname %></td>
+                                                <td class="col-xs-3"><%= shipment.cowsalive %></td>
+                                                <% }); %>
+                                                </tr>
+                                </tbody>
+                        </table>
+
+        </div>
+     </div>
+   </div>
+
+
+
+<% include ../partials/footer %>

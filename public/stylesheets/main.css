@@ -1,0 +1,39 @@
+div.dataTables_wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+.button-divider{
+    width:5px;
+    height:auto;
+}
+
+
+h1 {
+	color: #007bff;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #e3f2fd;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+

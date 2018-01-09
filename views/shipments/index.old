@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+		<div class="container">
+		 <h1> The Cattle Management Page </h1>
+                <h3> New shipments</h3>
+		<form action="/shipment" method="POST" class="form-block">
+		<div class="form-group row">
+			  <label for="market" class="col-3 col-form-label">Market</label>
+			  <div class="col-2">
+			    <select class="form-control" type="text" value="" name="market" required >
+				<option></option>
+				<option>Malaysia</option>
+				<option>Indonesia</option>
+				<option>Vietnam</option>
+			    </select>
+				</div>
+			  </div>
+			  <div class="form-group row">
+			  <label for="shippingnumber" class="col-3 col-form-label">LNC Shipping Number</label>
+			  <div class="col-2">
+			    <input class="form-control" type="text" value="" name="shippingnumber" pattern="\d{8}" required >
+			  </div>
+			</div>
+			<div class="form-group row">
+                          <label for="loaddate" class="col-3 col-form-label">Load Date</label>
+                          <div class="col-2">
+                            <input class="form-control" type="date" value="" min="2017-01-01" max="2025-01-01" name="loaddate" required >
+                          </div>
+                        </div>
+			
+			<div class="form-group row">
+                          <label for="shipname" class="col-3 col-form-label">Ship Name</label>
+                          <div class="col-2">
+                            <input class="form-control" type="text" value="" name="shipname" required >
+                          </div>
+                        </div>
+			<div>	
+			<input class="btn btn-outline-secondary" href="/shipment" method="POST" type="submit" value="add shipment">
+                        </div>
+			</form>
+			</div>
+
+<% include ../partials/footer %>

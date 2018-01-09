@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+	<div class="container">
+		<h1> The Results Page </h1>
+         	<h3> Contact information </h3>
+			<table id="datatable" class="display" cellspacing="0" width="100%">
+				<thead>
+            				<tr>
+					<th class="col-xs-3">Market:</th>
+               				<th class="col-xs-3">LNC Number:</th>
+               				<th class="col-xs-3">Load Date:</th>
+               				<th class="col-xs-3">Ship Name:</th>
+               				<th class="col-xs-3">Importer:</th>
+					<th class="col-xs-3">Update Number:</th>
+               				<th class="col-xs-3">Update Date</th>
+            				</tr>
+        			</thead>
+        				<tbody>
+						 <% data.forEach(function(data){ %>
+						<tr> 
+						<td class="col-xs-6"><%= data.market %></td>
+						<td class="col-xs-3"><%= data.shippingnumber %></td>
+						<td class="col-xs-3"><%= data.loaddate %></td>
+						<td class="col-xs-3"><%= data.shipname %></td>
+						<td class="col-xs-3"><%= data.importer %></td>
+						<td class="col-xs-3"><%= data.updatenumber %></td>
+						<td class="col-xs-3"><%= data.updatedtill %></td>
+						<% }); %>
+						</tr>
+				</tbody>
+			</table>
+		<a href="/">Add Data Entry</a>
+	</div>
+     </div>
+   </div>
+</body>
+
+<% include ../partials/footer %>

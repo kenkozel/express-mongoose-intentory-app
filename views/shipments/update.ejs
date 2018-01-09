@@ -1,0 +1,318 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+                 <h1>Shipment Updates</h1>
+                <h3></h3>
+			<form action="/shipment/<%= shipments._id %>/update" method="POST" class="form-block">
+                	<div class="form-group row">
+                          <label for="shippingnumber" class="col-3 col-form-label">LNC Shipping Number</label>
+                          <div class="col-2">
+				<input class="form-control" type="text" value="<%= shipments.shippingnumber %>" readonly>			
+				</div>
+			</div>
+				<div class="form-group row">
+                          <label for="updatenumber" class="col-3 col-form-label">Update Number</label>
+                          <div class="col-2">
+                            <input class="form-control" type="text" value="" name="updatenumber" required >
+                          </div>
+                        </div>
+			 <div class="form-group row">
+                          <label for="market" class="col-3 col-form-label">Market</label>
+                          <div class="col-2">
+
+                            <select class="form-control" id="market" type="text" value="" name="market" required >
+                                <option><%= shipments.market %></option>
+                                <option>Malaysia</option>
+                                <option>Indonesia</option>
+                                <option>Vietnam</option>
+                            </select>
+                                </div>
+                          </div>	
+                        <div class="form-group row">
+                          <label for="updatedtill" class="col-3 col-form-label">Update Expires</label>
+                          <div class="col-3">
+                            <input class="form-control" type="date" value="" min="2017-01-01" max="2025-01-01" name="updatedtill" required >
+                          </div>
+                        </div>
+			<div class="form-group row">
+                          <label for="importer" class="col-3 col-form-label">Importer</label>
+                          <div class="col-7">
+                            <select class="form-control" id="importer" type="text" value="" name="importer">
+			    	<option></option>
+				<option>Abdullah Nayan Farm</option>
+				<option>AR Meats Trading Sdn Bhd</option>
+				<option>BHT Livestock Farm Sdn Bhd</option>
+				<option>Felcra Livestock & Agri Products Sdn Bhd</option>
+				<option>Kulim Livestock </option>
+				<option>S.T Ternakan Sdn Bhd</option>
+				<option>Empire Al Hakimi</option>
+				<option>Perum Badan Urusan Logistik (Bulog)</option>
+				<option>PT Agro Menara Rachmat</option>
+				<option>PT Andini Karya Makmur</option>
+				<option>PT Andini Persada Sajehtera</option>
+				<option>PT Berdikari (Persero)</option>
+				<option>PT Bina Mentari Tunggal</option>
+				<option>PT Catur Mitra Taruma</option>
+				<option>PT Kadila Lestari Jaya</option>
+				<option>PT Pasir Tengah</option>
+				<option>PT Rajawali Nusantara Indonesia</option>
+				<option>PT Septia Anugerah</option>
+				<option>PT Sadajiwa Niaga Indonesia</option>
+				<option>PT Sukses Ganda Lestari</option>
+				<option>PT. Widodo Makmur Perkasa</option>
+				<option>Ket Phat Thinh Service Trading Produce Investment Joint Stock Company</option>
+				<option>My Loi Commune, My Thanh Tay Ward, Duc Hue District</option>
+				<option>Long An Province, Vietnam</option>
+				<option>An Thinh Khang Limited Liability Company</option>
+				<option>Nghi Lam Ward, Nghi Loc District, Nghe An Province, Vietnam</option>
+				</select>
+                          </div>
+                        </div>
+			
+			 <div class="form-group row">
+                          <label for="feedlot" class="col-3 col-form-label">Feedlot</label>
+                          <div class="col-7">
+                            <select class="form-control" id="feedlot" type="text" value="" name="feedlot">
+                                <option></option>
+				<option>Abdullah Nayan Feedlot:</option>
+				<option>Ahmad Ramali Bin Mohamad Farm</option>
+				<option>AR Meats Feedlot A: </option>
+				<option>AR Meats Feedlot B:</option>
+				<option>AR Meats Feedlot C:</option>
+				<option>Chall Enterprise</option>
+				<option>Desa Seletan Beef Sdn Bhd(Feedlot)</option>
+				<option>Edaran Ternak Tani Feedlot</option>
+				<option>Empire Al Hakimi Farm-2</option>
+				<option>Empire Al Hakimi: </option>
+				<option>Guka Enterprise</option>
+				<option>Hijasi Feedlot</option>
+				<option>HNA Katsuri Trading Feedlot</option>
+				<option>Iskandan Zulkarnain Farm Sdn Bhd</option>
+				<option>Jabay Farm Sdn Bhd</option>
+				<option>Kulim Livestock Farm B</option>
+				<option>MRR Livestock Enterprise: </option>
+				<option>Nurul Farm Feedlot</option>
+				<option>Omar Bin Khairuddin: </option>
+				<option>Ramali Isnin Enterprise</option>
+				<option>RN Jaya Ternak Farm</option>
+				<option>Rumah Sembelih Pokok Asam</option>
+				<option>S.T. Ternakan Feedlot Feedlot A</option>
+				<option>Sarving Global</option>
+				<option>Syarikat Nor Farm Sdn Bhd</option>
+				<option>Ternakan PGS Feedlot A</option>
+				<option>Wahidannie Livestock: </option>
+				<option>Wawasan Manis Sdn Bhd</option>
+				<option>Yusman Bin Wagiman Farm Feedlot</option>
+				<option>Zailani Bin Amat Taib Farm</option>
+				<option>Zulkanain Feedlot A </option>
+				<option>Zulkanain Feedlot B:</option>
+				<option>Beeves Feedlot:</option>
+				<option>Bojong Feedlot: </option>
+				<option>Cariu Feedlot: </option>
+				<option>Cijapati Feedlot of AKM: </option>
+				<option>Cikalong Feedlot: </option>
+				<option>Cikalong Kulon Cianjur: </option>
+				<option>CV Kaafa Indonesia Feedlot</option>
+				<option>Desa Nyalindung (Widodo): </option>
+				<option>Desa Runtu Kecamantan Arut Selatan Feedlot</option>
+				<option>Lembu Setia Abadi: </option>
+				<option>Linggasari Feedlot: </option>
+				<option>Pandanaran Arta Perkasa:</option>
+				<option>Rajawali Nusantara Indonesia Feedlot: </option>
+				<option>Rangkas Feedlot: </option>
+				<option>Sapi Sugih Makmur (SSM) Feedlot: </option>
+				<option>Subang Feedlot: </option>
+				<option>Cuu Long Feedlot</option>
+				<option>Dang Tho Tien Feedlot </option>
+				<option>Gia Hung Feedlot </option>
+				<option>Ket Phat Thinh Feedlot (KPT 2)</option>
+				<option>Kim Nam Hong Feedlot </option>
+				<option>Kim Thu Feedlot </option>
+				<option>KPT - Dong Nai Cattle Farm </option>
+				<option>KPT - Vinh Feedlot</option>
+				<option>KPT Cattle Farm 1 </option>
+				<option>KPT Cattle Farm 3 </option>
+				<option>KPT Cattle Farm 4</option>
+				<option>KPT Cattle Farm 5</option>
+				<option>Lap Thanh Feedlot</option>
+				<option>Le Minh Canh Feedlot</option>
+				<option>Nguyen Huu Cuong Feedlot </option>
+				<option>Nguyen Thi Hoa Feedlot</option>
+				<option>Nguyen Van Nho Feedlot </option>
+				<option>Pham Thanh Cong Feedlot</option>
+				<option>Vo Thi Van Feedlot</option>
+			    </select>
+				</div>
+			</div>
+			<div class="form-group row">
+                          <label for="abattior" class="col-3 col-form-label">Abattior</label>
+                          <div class="col-7">
+                            <select class="form-control" id="abattior" type="text" value="" name="abbatior">
+                                <option></option>
+				</option><option>Abdullah Nayan Abattoir:</option>
+				<option>AR Meats Corporation A:</option>
+				<option>Desa Seletan Beef Sdn Bhd(Abattoir)</option>
+				<option>Hijasi Farm</option>
+				<option>Kompleks Abattoir Machang</option>
+				<option>Perniaggan Zulkarnian: </option>
+				<option>Rumah Sembillih Pasir Mas:</option>
+				<option>Shah Alam Abattoir: </option>
+				<option>St Ternakan Sdn Bhd Abattoir</option>
+				<option>DVS Taiping</option>
+				<option>Ampel Boyolali Abattoir</option>
+				<option>ANI Sukabumi Abattoir </option>
+				<option>PT Ani Abattoir</option>
+				<option>Batembat Abattoir: </option>
+				<option>Bayur Abattoir</option>
+				<option>Bersaudara Abattoir:</option>
+				<option>Bojongkokosan Abattoir: </option>
+				<option>Bubulak Abattoir: </option>
+				<option>Bumi Agri Citra Mandiri Abattoir: </option>
+				<option>Cemerlang Abattoir:</option>
+				<option>Ciamis Abattoir:</option>
+				<option>Cianjur Abattoir: </option>
+				<option>Cianjur Arta Makmur Abattoir: </option>
+				<option>Cibinong Abattoir: </option>
+				<option>Cijapati Abattoir: </option>
+				<option>Cikampek Abattoir (H. Ade)</option>
+				<option>Cikaret Abattoir: </option>
+				<option>Cipanas Abattoir</option>
+				<option>Cirangrang Abattoir:</option>
+				<option>Cissat Abattoir</option>
+				<option>Ciroyom Abattoir: </option>
+				<option>CV Billy Berkah Mandiri Abattoir: </option>
+				<option>Dharmajaya Abattoir :</option>
+				<option>Elders Abattoir: </option>
+				<option>H. Abdullah Faqih</option>
+				<option>H. Amir (Ojo) Abattoir: </option>
+				<option>H. Suharjo</option>
+				<option>H. Tatang Abattoir: </option>
+				<option>Inkoppabri (H. Mahyidin): </option>
+				<option>Inkoppabri (H.Mamat):</option>
+				<option>Inkoppabri (H. Tholib) Abattoir: </option>
+				<option>Intisari I Abattoir:</option>
+				<option>Intisari III Abattoir: </option>
+				<option>Jagal Jaya </option>
+				<option>Jati Asih: </option>
+				<option>Jonggol Abattoir </option>
+				<option>Kabupaten Bandung Barat </option>
+				<option>Karawaci Abattoir:</option>
+				<option>Kibif Abattoir: </option>
+				<option>Kopo Abattoir</option>
+				<option>KPSBU Lembang Abattoir </option>
+				<option>Lembu Sakti Abattoir: </option>
+				<option>Lintus Nusa Pratama Abattoir</option>
+				<option>MBC Baleendah Abattoir:</option>
+				<option>Mitra Tani Farm Abattoir</option>
+				<option>Murni Abattoir:</option>
+				<option>Nagreg Abattoir </option>
+				<option>Pandaran Arta Perkasa </option>
+				<option>Pulogadung Abattoir: </option>
+				<option>Putra Mandiri </option>
+				<option>Purwarkarta Abattoir: </option>
+				<option>Ressa (H.Empit) Abattoir </option>
+				<option>RPH H. Pardi Abattoir</option>
+				<option>RPH Singaparna?</option>
+				<option>Rumah Potong Hewan Ruminansia Pangkalan Bun Abattoir</option>
+				<option>Sampico Abattoir:</option>
+				<option>Sapi Sugih Makmur Abattoir</option>
+				<option>Serua Abattoir: </option>
+				<option>Sinar Mulya Abattoir: </option>
+				<option>Sinar Mulya 99:</option>
+				<option>Sumur Pacing Abattoir</option>
+				<option>Tapos Abattoir:</option>
+				<option>Teluk Pucung </option>
+				<option>Tengki Abattoir: </option>
+				<option>Tiga Saudara Abattoir:</option>
+				<option>Trondol Abattoir: </option>
+				<option>UPTD RHP Dinas Pertanian Kota Surakarta</option>
+				<option>UPTD RPH Kabupaten Tegal</option>
+				<option>Dang Thi Nguyet </option>
+				<option>Bui Quang Phan Abattoir</option>
+				<option>Dinh Van Hung Abattoir 2 </option>
+				<option>Du Dong Chanh Abattoir </option>
+				<option>Duong Hong Thai abattoir </option>
+				<option>Hoa Ban Abs</option>
+				<option>Hoang Thi Lan Abattoir </option>
+				<option>Kim Thu Abattoir </option>
+				<option>Le Xuan Anh Abattoir</option>
+				<option>Nguyen Dang Nguyen </option>
+				<option>Nguyen Huu Anh Abattoir </option>
+				<option>Nguyen Huu Noan Abattoir </option>
+				<option>Nguyen Nhat Duy Abattoir </option>
+				<option>Nguyen Thi Cuc </option>
+				<option>Nguyen Thi Hoa </option>
+				<option>Nguyen Thi Nga </option>
+				<option>Nguyen Van Hoc Abattoir </option>
+				<option>Nguyen Van Khoa Abattoir </option>
+				<option>Nguyen Van Nho </option>
+				<option>Nguyen Van Thai Abattoir </option>
+				<option>Nguyen Xuan Huong</option>
+				<option>Thanh Nhan </option>
+				<option>Thuy Ha (KPT)</option>
+				<option>Tran Ngoc Thong Abattoir</option>
+				<option>Tran Ngoc Thu Abattoir </option>
+				<option>Tran Thanh Son Abattoir</option>
+				<option>Tran Thi Cuc </option>
+				<option>Truong Huu Ha Abattoir </option>
+				<option>Vissan Company </option>
+				<option>Vo Chi Thanh Abattoir </option>
+				<option>Vo Thi Van </option>
+				<option>Vu Thi Thu </option>
+                            </select>
+                                </div>
+			</div>
+			<div class="form-group row">
+                          <label for="cowsprocessed" class="col-3 col-form-label">Total Cattle Processed</label>
+                          <div class="col-2">
+                            <input class="form-control" type="number" value="" name="cowsprocessed" required >
+                          </div>
+                        </div>
+			<div class="form-group row">
+                          <label for="cowsalive" class="col-3 col-form-label">Live Cattle Processed</label>
+                          <div class="col-2">
+                            <input class="form-control" type="number" value="" name="cowsalive" required >
+                          </div>
+                        </div>
+			<div class="form-group row">
+                          <label for="cowsmortal" class="col-3 col-form-label">Mortal Cattle</label>
+                          <div class="col-2">
+                            <input class="form-control" type="number" value="" name="cowsmortal" required >
+                          </div>
+                        </div>
+			<div class="form-group row">
+                          <label for="cowsuntracked" class="col-3 col-form-label">Cattle Un-tracked</label>
+                          <div class="col-2">
+                            <input class="form-control" type="number" value="" name="cowsuntracked" required >
+                          </div>
+                        </div>
+                        <div>
+                        <input class="btn btn-success" href="/shipment/<%= shipments._id %>/update" method="POST" type="submit" value="update shipment">
+                        </div>
+			 <div class="form-group row">
+                          <label for="cowrfid" class="col-3 col-form-label">Shipment RFID's</label>
+                          <div class="col-6">
+                            <textarea id="text-area" class="form-control" rows="4" type="number" name="cowrfid" required ></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="files">Upload a CSV formatted file:</label>
+                           <input type="file" id="csvfiles"  class="form-control" accept=".csv" />
+                         </div>
+                        <div>
+                         <button id="submit-file" class="btn btn-primary">Upload File</button>
+                         </div>
+                        <script>
+                                    document.getElementById("submit-file").addEventListener("click", function() {
+                                     var reader = new FileReader();
+                                      reader.addEventListener('load', function() {
+                                       document.getElementById('text-area').innerText = this.result;
+                                        });
+                                      reader.readAsText(document.querySelector('#csvfiles').files[0]);
+                                    
+                                    });
+                            </script>
+                        </form>
+			
+<% include ../partials/footer %>

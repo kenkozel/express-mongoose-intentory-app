@@ -1,0 +1,74 @@
+<% include ../partials/header %>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<div class="container">
+		 <h1> The Cattle Management Page </h1>
+                <h3> New shipments</h3>
+		<form action="/shipment" method="POST" class="form-block">
+		<div class="form-group row">
+			  <label for="market" class="col-3 col-form-label">Market</label>
+			  <div class="col-2">
+			    <select class="form-control" type="text" value="" name="market" required >
+				<option></option>
+				<option>Malaysia</option>
+				<option>Indonesia</option>
+				<option>Vietnam</option>
+			    </select>
+				</div>
+			  </div>
+			  <div class="form-group row">
+			  <label for="shippingnumber" class="col-3 col-form-label">LNC Shipping Number</label>
+			  <div class="col-2">
+			    <input class="form-control" type="text" value="" name="shippingnumber" pattern="\d{8}" required >
+			  </div>
+			</div>
+			<div class="form-group row">
+                          <label for="loaddate" class="col-3 col-form-label">Load Date</label>
+                          <div class="col-3">
+                            <input class="form-control" type="date" value="" min="2017-01-01" max="2025-01-01" name="loaddate" required >
+                          </div>
+                        </div>
+			
+			<div class="form-group row">
+                          <label for="shipname" class="col-3 col-form-label">Ship Name</label>
+                          <div class="col-2">
+                            <input class="form-control" type="text" value="" name="shipname" required >
+                          </div>
+                        </div>
+			<div class="form-group row">
+                          <label for="cowsalive" class="col-3 col-form-label">Number of Cattle</label>
+                          <div class="col-2">
+                            <input class="form-control" type="text" value="" name="cowsalive" required >
+                          </div>
+                        </div>
+			<div>
+			<input class="btn btn-success" href="/shipment" method="POST" type="submit" value="add shipment">
+                        </div>
+			<div class="form-group row">
+                          <label for="cowrfid" class="col-3 col-form-label">Shipment RFID's</label>
+                          <div class="col-6">
+                            <textarea id="text-area" class="form-control" rows="4" type="text" name="cowrfid" required ></textarea>
+                          </div>
+                        </div>
+			<div class="form-group">
+                           <label for="files">Upload a CSV formatted file:</label>
+                           <input type="file" id="csvfiles"  class="form-control" accept=".csv" />
+                         </div>	
+			<div>
+                         <button id="submit-file" class="btn btn-primary">Upload File</button>
+                         </div>	
+			<script>
+                                    document.getElementById("submit-file").addEventListener("click", function() {
+                                     var reader = new FileReader();
+                                      reader.addEventListener('load', function() {
+                                       document.getElementById('text-area').innerText = this.result;
+                                        });
+                                      reader.readAsText(document.querySelector('#csvfiles').files[0]);
+                                    
+                                    });
+                            </script>
+			</form>
+			</div>
+			
+<% include ../partials/footer %>
